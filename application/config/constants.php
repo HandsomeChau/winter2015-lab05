@@ -2,6 +2,8 @@
 
 // location of data folders
 define( 'DATA_FOLDER', './data' );
+// <br/> HTML tag
+define( 'BR', '<br/>' );
 
 /*
 |--------------------------------------------------------------------------
