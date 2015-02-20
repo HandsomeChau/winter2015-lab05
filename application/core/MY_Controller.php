@@ -5,11 +5,12 @@
  *
  * Default application controller
  *
- * @author		JLP
+ * @author              JLP
  * @copyright           2010-2013, James L. Parry
  * ------------------------------------------------------------------------
  */
-class Application extends CI_Controller {
+class Application extends CI_Controller
+{
 
     protected $data = array();      // parameters for view components
     protected $id;                  // identifier for our content
@@ -19,7 +20,8 @@ class Application extends CI_Controller {
      * Establish view parameters & load common helpers
      */
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
         $this->data = array();
         $this->data['title'] = 'Quotes CMS';    // our default title
@@ -30,13 +32,19 @@ class Application extends CI_Controller {
     /**
      * Render this page
      */
-    function render() {
-        $this->data['menubar'] = $this->parser->parse('_menubar', $this->config->item('menu_choices'),true);
-        $this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
+    function render()
+    {
+        $this->data['menubar'] = $this->parser->parse( '_menubar', $this->config->item( 'menu_choices' ), TRUE );
+        $this->data['content'] = $this->parser->parse( $this->data['pagebody'], $this->data, TRUE );
+
+        // convert Caboose output into view parameters
+        $this->data['caboose_styles'] = $this->caboose->styles();
+        $this->data['caboose_scripts'] = $this->caboose->scripts();
+        $this->data['caboose_trailings'] = $this->caboose->trailings();
 
         // finally, build the browser page!
         $this->data['data'] = &$this->data;
-        $this->parser->parse('_template', $this->data);
+        $this->parser->parse( '_template', $this->data );
     }
 
 }

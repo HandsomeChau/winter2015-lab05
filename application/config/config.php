@@ -1,14 +1,14 @@
 <?php
 
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+if ( !defined( 'BASEPATH' ) )
+    exit( 'No direct script access allowed' );
 
 // the menu basics (text navbar)
 $config['menu_choices'] = array(
     'menudata' => array(
-	array('name' => "View 'Em", 'link' => '/viewer'),
-        )
-    );
+        array( 'name' => "View 'Em", 'link' => '/viewer' ),
+    )
+);
 
 
 /*
@@ -102,7 +102,7 @@ $config['charset'] = 'UTF-8';
   | setting this variable to TRUE (boolean).  See the user guide for details.
   |
  */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 
 /*

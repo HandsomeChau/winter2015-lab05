@@ -2,16 +2,17 @@
 
 /**
  * Our homepage. Show the most recently added quote.
- * 
+ *
  * controllers/Welcome.php
  *
  * ------------------------------------------------------------------------
  */
-class Welcome extends Application {
+class Welcome extends Application
+{
 
     function __construct()
     {
-	parent::__construct();
+        parent::__construct();
     }
 
     //-------------------------------------------------------------
@@ -20,9 +21,9 @@ class Welcome extends Application {
 
     function index()
     {
-	$this->data['pagebody'] = 'justone';    // this is the view we want shown
-	$this->data = array_merge($this->data, (array) $this->quotes->last());
-	$this->render();
+        $this->data['pagebody'] = 'justone';    // this is the view we want shown
+        $this->data = array_merge( $this->data, (array)$this->quotes->last() );
+        $this->render();
     }
 
 }

@@ -16,43 +16,46 @@
  * through the world wide web, please send an email to
  * licensing@ellislab.com so we can send you a copy immediately.
  *
- * @package		CodeIgniter
- * @author		CodeIgniter Community
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
- * @license		http://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
- * @link		http://codeigniter.com
- * @since		Version 3.0
+ * @package        CodeIgniter
+ * @author         CodeIgniter Community
+ * @copyright      Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @license        http://opensource.org/licenses/AFL-3.0 Academic Free License (AFL 3.0)
+ * @link           http://codeigniter.com
+ * @since          Version 3.0
  * @filesource
  */
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined( 'BASEPATH' ) OR exit( 'No direct script access allowed' );
 ?>
 
 <div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
 
-<h4>A PHP Error was encountered</h4>
+    <h4>A PHP Error was encountered</h4>
 
-<p>Severity: <?php echo $severity; ?></p>
-<p>Message:  <?php echo $message; ?></p>
-<p>Filename: <?php echo $filepath; ?></p>
-<p>Line Number: <?php echo $line; ?></p>
+    <p>Severity: <?php echo $severity; ?></p>
 
-<?php if (defined('SHOW_DEBUG_BACKTRACE') && SHOW_DEBUG_BACKTRACE === TRUE): ?>
+    <p>Message:  <?php echo $message; ?></p>
 
-	<p>Backtrace:</p>
-	<?php foreach (debug_backtrace() as $error): ?>
+    <p>Filename: <?php echo $filepath; ?></p>
 
-		<?php if (isset($error['file']) && strpos($error['file'], realpath(BASEPATH)) !== 0): ?>
+    <p>Line Number: <?php echo $line; ?></p>
 
-			<p style="margin-left:10px">
-			File: <?php echo $error['file'] ?><br />
-			Line: <?php echo $error['line'] ?><br />
-			Function: <?php echo $error['function'] ?>
-			</p>
+    <?php if ( defined( 'SHOW_DEBUG_BACKTRACE' ) && SHOW_DEBUG_BACKTRACE === TRUE ): ?>
 
-		<?php endif ?>
+        <p>Backtrace:</p>
+        <?php foreach ( debug_backtrace() as $error ): ?>
 
-	<?php endforeach ?>
+            <?php if ( isset( $error['file'] ) && strpos( $error['file'], realpath( BASEPATH ) ) !== 0 ): ?>
 
-<?php endif ?>
+                <p style="margin-left:10px">
+                    File: <?php echo $error['file'] ?><br/>
+                    Line: <?php echo $error['line'] ?><br/>
+                    Function: <?php echo $error['function'] ?>
+                </p>
+
+            <?php endif ?>
+
+        <?php endforeach ?>
+
+    <?php endif ?>
 
 </div>

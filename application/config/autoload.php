@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( !defined( 'BASEPATH' ) ) exit( 'No direct script access allowed' );
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database','parser');
+$autoload['libraries'] = array( 'database', 'parser', 'caboose' );
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database','parser');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url');
+$autoload['helper'] = array( 'url' );
 
 
 /*
@@ -109,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('quotes');
+$autoload['model'] = array( 'quotes' );
 
 
 /* End of file autoload.php */
